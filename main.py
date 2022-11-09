@@ -172,7 +172,7 @@ def bitreps_measure(input_file, blocksize, progress_bar, sliding, err_rate):
 
         # Increment the progress bar (for the GUI)
         if i % floor(percent) == 0:
-            progress_bar.setValue(i / percent)
+            progress_bar.setValue(int(i / percent))
 
     # Determine average FPR across insertion time and add this to metadata
     afpr = sum(fprs) / len(fprs)
