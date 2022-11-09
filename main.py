@@ -159,7 +159,7 @@ def bitreps_measure(input_file, blocksize, progress_bar, sliding, err_rate):
         if blocks[i] in bf:                                 # If the block is in the bloom filter
             outer_hits["hits"][blocks[i]]["num_reps"] += 1  # Increase the number of observed repetitions for this block
             outer_hits["hits"][blocks[i]]["indices"].append(i)  # Associate current block index with nth repetition
-            bin_rep = "{0:b}".format(blocks[i])
+            bin_rep = "{0:b}".format(int(blocks[i]))
             while len(bin_rep) < blocksize:                 # Pad binary representation to blocksize if required
                 bin_rep = "0" + bin_rep
 
@@ -172,7 +172,7 @@ def bitreps_measure(input_file, blocksize, progress_bar, sliding, err_rate):
 
         # Increment the progress bar (for the GUI)
         if i % floor(percent) == 0:
-            progress_bar.setValue(i / percent)
+            progress_bar.setValue(int(i / percent))
 
     # Determine average FPR across insertion time and add this to metadata
     afpr = sum(fprs) / len(fprs)

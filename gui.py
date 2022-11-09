@@ -79,7 +79,7 @@ class BitReps(QWidget):
         self.t1_sub_3 = QHBoxLayout()
         self.t1_slide_lab = QLabel("Sliding window?:")
         self.t1_slide_chk = QCheckBox()
-        self.t1_slide_chk.setEnabled(False)
+        self.t1_slide_chk.setEnabled(True)
         self.t1_sub_3.addWidget(self.t1_slide_lab)
         self.t1_sub_3.addWidget(self.t1_slide_chk)
 
